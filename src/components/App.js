@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Header from "./Header";
 import ListingsContainer from "./ListingsContainer";
+import Form from "./Form";
 
 const url = 'http://localhost:6001/listings'
 
@@ -14,6 +15,9 @@ function App() {
     .then(d =>  setFetchData(d))
   }, [])
 
+  const addItem = (item) => {
+    setFetchData([...fetchData, item])
+  }
   const removeItem = (id) => {
     const newData = fetchData.filter((item) => item.id !== id)
     setFetchData(newData)
@@ -31,8 +35,8 @@ function App() {
 
   return (
     <div className="app">
-      <Header setSearch={setSearch} />
-      {/* <Form /> */}
+      <Header setSearch={setSearch} addItem={addItem} />
+      <Form addItem={addItem}/>
       <ListingsContainer fetchData={searchedThroughListing} removeItem={removeItem} />
     </div>
   );

@@ -1,7 +1,7 @@
 import React from "react";
 import Search from "./Search";
 
-function Header({setSearch}) {
+function Header({setSearch, addItem}) {
   return (
     <header>
       <h1>
