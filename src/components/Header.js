@@ -2,10 +2,13 @@ import React from "react";
 import Search from "./Search";
 
 function Header({setSearch, setToggleSort, toggle}) {
+
+  //function to handle the toggle
   const handleToggle = (e) => {
     const negate = !toggle
     setToggleSort(negate)
   }
+  
   return (
     <header>
       <h1>

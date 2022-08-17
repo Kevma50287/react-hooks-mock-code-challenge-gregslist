@@ -3,6 +3,7 @@ import ListingCard from "./ListingCard";
 
 function ListingsContainer({fetchData, removeItem}) {
 
+  //map through array, create Listing Card for each item
   const itemArr = fetchData.map((item)=>{
     return <ListingCard key={item.id} item={item} removeItem={removeItem} />
   })

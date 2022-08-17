@@ -2,12 +2,14 @@ import React, { useState } from 'react'
 import { url } from './App'
 
 export default function Form({ addItem }) {
+    //useState controlled form inputs
     const [formData, setFormData] = useState({
         description: "",
         image: "",
         location: ""
     })
 
+    //handleSubmit to add item from form to list
     const handleSubmit = (e) => {
         e.preventDefault()
         fetch(url, {
@@ -22,6 +24,7 @@ export default function Form({ addItem }) {
             .catch(err => console.log(err))
     }
 
+    //handleForm data to change useState for controlled form
     const handleFormData = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value })
     }
