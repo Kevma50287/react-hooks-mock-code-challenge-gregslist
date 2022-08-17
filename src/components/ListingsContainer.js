@@ -4,7 +4,7 @@ import ListingCard from "./ListingCard";
 function ListingsContainer({fetchData, removeItem}) {
 
   const itemArr = fetchData.map((item)=>{
-    return <ListingCard item={item} removeItem={removeItem} />
+    return <ListingCard key={item.id} item={item} removeItem={removeItem} />
   })
 
   return (

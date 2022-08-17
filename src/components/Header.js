@@ -1,7 +1,11 @@
 import React from "react";
 import Search from "./Search";
 
-function Header({setSearch, addItem}) {
+function Header({setSearch, setToggleSort, toggle}) {
+  const handleToggle = (e) => {
+    const negate = !toggle
+    setToggleSort(negate)
+  }
   return (
     <header>
       <h1>
@@ -11,6 +15,7 @@ function Header({setSearch, addItem}) {
         gregslist
       </h1>
       <Search setSearch={setSearch}/>
+      <button onClick={handleToggle}>Sort A-Z by Location</button>
     </header>
   );
 }
